@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const config = require("./config/key");
 app.use(cookieParser());
 const cors = require('cors')
-app.use(express.static('build'))
+app.use(express.static('build')) 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); 
@@ -31,7 +31,7 @@ mongoose.connect(dbUrl, {
 
 const port = process.env.PORT || 7724
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/static", "index.html"));
+  res.sendFile(path.join(__dirname, "./build/static", "index.html"));
 });
 app.use(express.static('public'));
 app.listen(port, () => {
