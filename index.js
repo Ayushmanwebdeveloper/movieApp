@@ -27,7 +27,7 @@ mongoose.connect(dbUrl, {
 
 const port = process.env.PORT || 7724
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
 });
 
 app.listen(port, () => {
