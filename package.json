@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "Sang Yoon Byun",
+  "author": "Ayushman Tripathi",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
