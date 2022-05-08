@@ -6,14 +6,13 @@ const cookieParser = require("cookie-parser");
 const config = require("./config/key");
 app.use(cookieParser());
 const cors = require('cors')
-
+app.use(express.static('build'))
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); 
-app.use(express.static(path.join(__dirname, "client", "build")))
 app.use("/api/users", require("./routes/users"));
 app.use("/api/favorite", require("./routes/favorite"));
-app.use(express.static('./client/build'))
+
 app.use(express.static(path.join(__dirname, './client', 'build')));
 app.use(express.static('./client/public'));
 const dbUrl = process.env.MONGODB_URI || `mongodb+srv://Ayushman:Ayushmantr7724%40@cluster0.hg72m.mongodb.net/movieApp?retryWrites=true&w=majority`
