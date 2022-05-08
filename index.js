@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "client", "build")))
 app.use("/api/users", require("./routes/users"));
 app.use("/api/favorite", require("./routes/favorite"));
-
+app.use(express.static(path.join(__dirname, './client', 'build')));
+app.use(express.static('./client/public'));
 const dbUrl = process.env.MONGODB_URI || `mongodb+srv://Ayushman:Ayushmantr7724%40@cluster0.hg72m.mongodb.net/movieApp?retryWrites=true&w=majority`
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
@@ -29,7 +30,7 @@ const port = process.env.PORT || 7724
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/static", "index.html"));
 });
-
+app.use(express.static('public'));
 app.listen(port, () => {
   console.log(`Server Connected On ${port}`)
 })
