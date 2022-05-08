@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const config = require("./config/key");
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json()); 
 app.use(express.static(path.join(__dirname, "client", "build")))
 app.use("/api/users", require("./routes/users"));
 app.use("/api/favorite", require("./routes/favorite"));
