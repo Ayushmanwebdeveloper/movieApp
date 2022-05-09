@@ -15,7 +15,7 @@ app.use("/api/favorite", require("./routes/favorite"));
 
 app.use(express.static(path.join(__dirname, './client', 'build')));
 app.use(express.static('./client/public'));
-const dbUrl = process.env.MONGODB_URI || `mongodb+srv://Ayushman:Ayushmantr7724%40@cluster0.hg72m.mongodb.net/movieApp?retryWrites=true&w=majority`
+const dbUrl = process.env.MONGODB_URI
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
